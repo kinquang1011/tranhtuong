@@ -3,7 +3,7 @@ $sologan_tranhtuong = "Nơi cung cấp dịch vụ hoàn hảo dành cho bạn. 
 $sologa_tknt = "Đội ngũ kiến trúc sư có kinh nghiệm và nhiệt huyết. Chúng tôi muốn đem những phong cách mới lạ về ngôi nhà bạn";
 ?>
 <section
-	class="carousel slide cid-qSpJvMx2Ql" data-interval="false"
+	class="carousel slide cid-qSpJvMx2Ql xxx" data-interval="false"
 	id="slider1-6">
 
 <div class="full-screen">

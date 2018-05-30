@@ -27,6 +27,7 @@ $this->load->helper('url');
   <link rel="stylesheet" href="<?php echo base_url();?>assets/theme/css/style.css">
   <link rel="stylesheet" href="<?php echo base_url();?>assets/gallery/style.css">
   <link rel="stylesheet" href="<?php echo base_url();?>assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/myself/mine.css" type="text/css">
   
   
   
@@ -46,7 +47,6 @@ $this->load->helper('url');
   <?php $this->load->view('online/component/group.php');?>
 <!-- List image end -->
 <!--  Share this page -->
-  <?php $this->load->view('online/component/share.php'); ?>
 <!--  Share this page end -->
 <!--  Counter start -->
   <?php $this->load->view('online/component/counter.php')?>
