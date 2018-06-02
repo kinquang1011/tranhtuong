@@ -9,7 +9,7 @@ $sologa_tknt = "Đội ngũ kiến trúc sư có kinh nghiệm và nhiệt huy�
 <div class="full-screen">
 <div class="mbr-slider slide carousel" data-pause="true"
 	data-keyboard="false" data-ride="carousel" data-interval="7000">
-<ol class="carousel-indicators">
+<!--<ol class="carousel-indicators">
 	<li data-app-prevent-settings="" data-target="#slider1-6"
 		class=" active" data-slide-to="0"></li>
 	<li data-app-prevent-settings="" data-target="#slider1-6"
@@ -19,8 +19,8 @@ $sologa_tknt = "Đội ngũ kiến trúc sư có kinh nghiệm và nhiệt huy�
 	<li data-app-prevent-settings="" data-target="#slider1-6"
 		data-slide-to="3"></li>
 </ol>
-<div class="carousel-inner" role="listbox">
-<div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(<?php echo base_url();?>assets/images/mbr-720x1080.jpg);">
+--><div class="carousel-inner" role="listbox">
+<div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(<?php echo base_url();?>data/IMG20180107164559.jpg);">
 <div class="container container-slide">
 <div class="image_wrapper">
 <div class="mbr-overlay"></div>
@@ -34,7 +34,7 @@ $sologa_tknt = "Đội ngũ kiến trúc sư có kinh nghiệm và nhiệt huy�
 </div>
 </div>
 </div>
-<div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(<?php echo base_url();?>assets/images/mbr-1660x1080.jpg);">
+<div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(<?php echo base_url();?>data/IMG20180204105108.jpg);">
 <div class="container container-slide">
 <div class="image_wrapper">
 <div class="mbr-overlay"></div>

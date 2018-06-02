@@ -8,6 +8,8 @@ class Home extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model("Menu");
 		$this->load->model("Submenu");
+		$this->load->model("Catalogy");
+		
 	}
 
 	/**
@@ -46,10 +48,14 @@ class Home extends CI_Controller {
 			if(count($subByMenuIds)!=0){
 				foreach ($subByMenuIds as $eachSub) {
 				$data['menus'] [$menu['menu_id']]['sub_menus'] [$eachSub['sub_id']]= $eachSub;
+				$group = $this->Catalogy->getAllCatalogy($eachSub['sub_id']);
+				$data['groups'][$eachSub['sub_id']]['name'] = $eachSub['sub_name'];
+				$data['groups'][$eachSub['sub_id']]['link'] = $eachSub['sub_id'];
+				$data['groups'][$eachSub['sub_id']]['catalogy'] = $group; 
 				}
 			}
 		}
-//		var_dump($data);exit;
+		
 		$this->load->view('online/homepage.php',$data);
 	}
 	public function test()
