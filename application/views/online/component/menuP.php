@@ -32,7 +32,7 @@
                         	  <!-- Sub item start --> 
                         	<div class="dropdown-menu">
                         	  <?php foreach ($menu['sub_menus'] as $sub){?>
-                        		<a class="text-white dropdown-item display-4" href="<?php echo base_url()."index.php/".$sub['sub_id']?>"><?php echo $sub['sub_name']?></a>
+                        		<a class="text-white dropdown-item display-4" href="<?php echo base_url()."index.php/danhmuc/".$sub['sub_id']?>"><?php echo $sub['sub_name']?></a>
                         		<?php }?>
                         		
                         	</div>
@@ -40,7 +40,11 @@
                 </li>
                 <?php }else{?>
             	<li class="nav-item">
+            		<?php if (strcasecmp($menu['link'], "lienhe")==0){?>
+            		<a class="nav-link link text-white display-4" href="#bottom">
+            		<?php }else{?>
                     <a class="nav-link link text-white display-4" href="<?php echo base_url()."index.php/".$menu['link'];?>">
+                    <?php }?>
                         <span class="<?php echo $menu['SpanClass'];?>"></span>
                         <?php echo $menu['Name']; ?></a>
                 </li>

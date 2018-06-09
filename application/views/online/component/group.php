@@ -3,7 +3,7 @@
    <div>
    
    <?php foreach ($groups as $group){?>
-      <h5 class="section-title section-title-bold"><a class="section-title-main" href="<?php echo base_url()."index.php/".$group['link']?>"> <?php  echo $group['name']?></a><b></b></h5>
+      <h5 class="section-title section-title-bold"><a class="section-title-main" href="<?php echo base_url()."index.php/danhmuc/".$group['link']?>"> <?php  echo $group['name']?></a><b></b></h5>
       <div class="mbr-gallery-row">
          <div class="mbr-gallery-layout-default">
             <div>
@@ -12,7 +12,7 @@
                   <?php foreach ($group['catalogy'] as $img) {?>
                   	<div class="mbr-gallery-item mbr-gallery-item--p1"
                      data-tags="Awesome">
-                     <a href="<?php echo base_url()."index.php/".$group['link']?>" >
+                     <a href="<?php echo base_url()."index.php/danhmuc/".$group['link']?>" >
 	                     <div class ="border border-white" >
 	                        <img src="<?php echo base_url()."/data/". $img['url_img'];?>" alt="" title="">
 	                          <!--  <span class="mbr-gallery-title mbr-fonts-style display-7"></span>-->

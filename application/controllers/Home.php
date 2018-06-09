@@ -48,7 +48,8 @@ class Home extends CI_Controller {
 			if(count($subByMenuIds)!=0){
 				foreach ($subByMenuIds as $eachSub) {
 				$data['menus'] [$menu['menu_id']]['sub_menus'] [$eachSub['sub_id']]= $eachSub;
-				$group = $this->Catalogy->getAllCatalogy($eachSub['sub_id']);
+				$group = $this->Catalogy->get4Catalogy($eachSub['sub_id']);
+				/* Get data for group image */
 				$data['groups'][$eachSub['sub_id']]['name'] = $eachSub['sub_name'];
 				$data['groups'][$eachSub['sub_id']]['link'] = $eachSub['sub_id'];
 				$data['groups'][$eachSub['sub_id']]['catalogy'] = $group; 
@@ -57,6 +58,35 @@ class Home extends CI_Controller {
 		}
 		
 		$this->load->view('online/homepage.php',$data);
+	}
+	
+	public function danhmuc($sub_id){
+		/* Menu Start*/
+		$menus = $this->Menu->getAllMenu();
+		foreach ($menus as $menu){	 
+			$subByMenuIds = $this->Submenu->getSubMenu($menu['menu_id']);
+			$data['menus'] [$menu['menu_id']] ['Name']= $menu['menu_name'];
+			$data['menus'] [$menu['menu_id']] ['SpanClass']= $menu['url_img'];
+			$data['menus'] [$menu['menu_id']] ['link']= $menu['menu_id'];
+			if(count($subByMenuIds)!=0){
+				foreach ($subByMenuIds as $eachSub) {
+				$data['menus'] [$menu['menu_id']]['sub_menus'] [$eachSub['sub_id']]= $eachSub;
+				}
+			}
+		}
+		/* Menu End */
+		
+		/* get title, description, and list image  Start*/
+		$objSub = $this->Submenu->getSubMenuBySubId($sub_id);
+		$lstImg = $this->Catalogy->getAllCatalogy($sub_id);
+		$data['name'] = $objSub[0]['sub_name'];
+		$data['description'] = $objSub[0]['description'];
+		$data['lstImg'] = $lstImg;
+		/* get title, description, and list image End*/
+		
+		
+		
+		$this->load->view('online/grouppage.php',$data);
 	}
 	public function test()
 	{

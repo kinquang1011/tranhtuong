@@ -1,0 +1,445 @@
+hr {
+	color: green;
+	height: 5px;
+}
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+li a:hover {
+	text-decoration: none;
+}
+li a:active{
+	text-decoration: none;
+}
+li a:visited{
+	text-decoration: none;
+}
+
+ul{
+	list-style-image: url('images/cherry-icon.png');
+}
+ul li{
+	border-bottom: 1px dashed green;
+	margin-top: 10px;
+	/* height:20px;
+	overflow:hidden; */
+}
+ul li:hover{
+	background-color: Powderblue;
+	box-shadow:0 1px 2px #AAAAAA;
+	text-decoration: none;
+}
+ul li:visited{
+	text-decoration: none;
+}
+ul p:hover{
+	text-decoration: none;
+}
+
+#myclear{
+	width: 100%;
+	height: 8px;
+}
+
+#mybody{
+	background-color: Honeydew;
+}
+
+#myheader{
+	border-top: 6px solid #F7471F;
+	box-shadow: 0 6px 2px #AAAAAA;
+	text-shadow: 0 1px 1px #000;
+	position: relative;
+	z-index: 5;
+}
+#mylinemenu{
+	width: 100%;
+	height: 6px;
+	background-color: #F7471F;
+	margin-top: 10px;
+}
+.navbar-toggle .icon-bar{ background-color: black;}
+.mybuttonmenu{
+	background-color: rgba(87,241,39,0.97);
+	font-weight: bold;
+	text-align: center;
+	margin-right: 1px;
+	box-shadow: 0 6px 20px #AAAAAA;
+
+	}
+@media only screen and  (min-width: 300px) {
+	/*#mycontentarticle img{
+		position:relative;
+		left: 30%;
+		max-width: 200px;
+	}*/
+
+	.divtintucimg {
+		margin: 10px;
+		width: 80px;
+		height: 115px;
+		line-height: 115px;
+		text-align: center;
+	}
+	.myarticle h4{
+		font-weight: bold;
+		color: blue;
+		margin-top: -120px;
+		margin-left: 110px;
+	}
+}
+@media only screen and  (min-width: 600px) {
+	/*#mycontentarticle img{
+		margin-left: -50px;
+		max-width: 100%;
+	}*/
+	.divtintucimg {
+		margin: 10px;
+		width: 115px;
+		height: 115px;
+		line-height: 115px;
+		text-align: center;
+	}
+	.myarticle h4{
+		font-weight: bold;
+		color: blue;
+		margin-top: -100px;
+		margin-left: 160px;
+	}
+
+}
+@media only screen and  (min-width: 768px) {
+	#menutfv {
+		font-size: 8px;
+	}
+	#navbarCollapse{
+		margin-left:6%;
+	}
+	.divtintucimg {
+		margin: 10px;
+		width: 115px;
+		height: 115px;
+		line-height: 115px;
+		text-align: center;
+	}
+	.myarticle h4{
+		font-weight: bold;
+		color: blue;
+		margin-top: -100px;
+		margin-left: 160px;
+	}
+}
+@media only screen and  (min-width: 1200px){
+	#menutfv {
+		font-size: 14px;
+		margin-left: -100px;
+	}
+	#navbarCollapse{
+		margin-left:15%;
+	}
+	.divtintucimg {
+		margin: 10px;
+		width: 115px;
+		height: 115px;
+		line-height: 115px;
+		text-align: center;
+	}
+	.myarticle h4{
+		font-weight: bold;
+		color: blue;
+		margin-top: -100px;
+		margin-left: 160px;
+	}
+}
+.title_tintuc {
+	text-overflow:ellipsis;
+	overflow: hidden;
+	height: 95px;
+}
+#testma {
+	font-family: "Times New Roman", Times, serif;
+}
+#myarticleround{
+	height: 120px;
+	margin: 0 5px 0 5px;
+	border-bottom: 1px dashed green;
+}
+.resize_fit_center {
+	max-width:100%;
+	max-height:100%;
+	vertical-align: middle;
+}
+#container_ly {
+margin-bottom: 10px;
+}
+#mygroup{
+	border-top: 5px solid Honeydew;
+	border-left: 2px solid green;
+	border-right: 5px solid Honeydew;
+	border-bottom: 2px solid green;
+	position: relative;
+	float:left;
+	height: 410px;
+	background-color: white;
+	box-shadow: 0 1px 3px 0 #b5b5b5;
+	box-shadow: 0 6px 20px #AAAAAA;
+	margin: 0 15px 15px 0;
+
+}
+
+#mygroup h1{
+	height: 35px;
+	margin: 0 0 20px 0;
+	font-size: 16px;
+	color: #cbc750;
+	background: url(http://giayphepthucpham.vn/public/images/titlexxx.png);
+	box-shadow: 0 6px 20px #AAAAAA;
+}
+
+#mygroup h1 p{
+	position:absolute;
+	margin-top: 10px;
+	margin-left: 17px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-shadow: 0 1px 1px #000;
+	font-size: 13px;
+}
+#mygroup h1 p:hover{
+	text-transform: uppercase;
+	font-size: 13px;
+	margin-top: 7px;
+}
+
+
+#mymainarticle{
+	margin-left: 20px;
+}
+#mymainarticle h5{
+	font-weight: bold;
+	color: blue;
+	margin-top: -130px;
+	margin-left: 160px;
+	overflow:hidden;
+	height: 35px;
+	line-height: 18px;
+}
+#mymainarticle p{
+	font-weight: italic;
+	margin-left: 160px;
+	height: 99px;
+	overflow:hidden;
+}
+#myarticlefull{
+	border-top: 5px solid Honeydew;
+	border-left: 2px solid green;
+	border-right: 5px solid Honeydew;
+	border-bottom: 2px solid green;
+	position: relative;
+	background-color: white;
+	box-shadow: 0 1px 3px 0 #b5b5b5;
+	box-shadow: 0 6px 20px #AAAAAA;
+	min-height: 900px;
+}
+#myarticlefull h3{
+	font-weight: bold;
+	font-style:italic;
+	color: green;
+	font-family: "Times New Roman", Times, serif;
+}
+}
+/*#myarticleround{
+	height: 120px;
+	margin: 0 5px 0 5px;
+	border-bottom: 1px dashed green;
+}*/
+#myarticleround:hover{
+	/* background-color: Beige; */
+	background-color: Powderblue;
+	box-shadow:0 1px 2px #AAAAAA;
+}
+#myarticleround .myarticle{
+	width: 100%;
+	height: 100px;
+}
+
+.myarticle p{
+	font-weight: italic;
+	margin-left: 160px;
+}
+#mycontentarticle{
+	margin-left: 20px;
+}
+#mycontentarticle h3{
+	font-weight: bold;
+	color: green;
+}
+#mycontentarticle h4{
+	font-weight: bold;
+	font-style:italic;
+	color: green;
+	font-family: "Times New Roman", Times, serif;
+}
+#mycontentarticle .p_datetime{
+	font-style:italic;
+}
+#mycontentarticle .p_caption{
+	font-weight: bold;
+}
+#myright{
+	border-top: 5px solid Honeydew;
+	border-left: 2px solid green;
+	border-right: 5px solid Honeydew;
+	border-bottom: 2px solid green;
+	/*position: absolute;*/
+	height: auto;
+	background-color: white;
+	box-shadow: 0 1px 3px 0 #b5b5b5;
+	box-shadow: 0 6px 20px #AAAAAA;
+}
+#myright h1{
+	height: 35px;
+	margin: 0 0 20px 0;
+	font-size: 15px;
+	color: #cbc750;
+	background: url(http://giayphepthucpham.vn/public/images/titlexxx.png);
+	box-shadow: 0 6px 20px #AAAAAA;
+
+}
+#myright h1 p{
+	position:absolute;
+	margin-top: 10px;
+	margin-left: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-shadow: 0 1px 1px #000;
+}
+#myright img {
+	float: left;
+	margin-right: 2px;
+}
+
+#myright h1 p{
+	margin-left: 17px;
+}
+
+#myrightgroup{
+	height: auto;
+}
+
+#myrightarticle{
+	height: auto;
+}
+
+#myrightcontact{
+	height:253px;
+	width:253px;
+	margin: auto;
+}
+
+#myrightboss{
+	height: auto;
+}
+#counter{
+	font-weight: bold;
+	color: red;
+	margin-left: 10px;
+	font-family:'Cookie',cursive;
+	min-height: 100px;
+}
+#myfooter {
+	/*background: url("http://giayphepthucpham.vn/public/images/v1.jpeg") no-repeat scroll center top / 100% 100%;*/
+	background-color: green;
+	border-top: 6px solid #F7471F;;
+	text-shadow: 0 1px 1px #000;
+	position: relative;
+	z-index: 5;
+	box-shadow: 0 1px 3px 0 #b5b5b5;
+	box-shadow: 0 6px 20px #AAAAAA;
+}
+
+#myfooter h2{
+	text-align: center;
+	font-weight: bold;
+}
+
+#myfooter ul{
+	margin-right: 20px;
+	font-weight: italic;
+}
+#myfooter ul p{
+	text-align: justify;
+}
+/*#myfooter li{
+	margin-right: 20px;
+	font-weight: italic;
+}*/
+#myfooter ul p a{
+	color: #F0FFFF;
+	text-align: justify;
+}
+#myfooter ul p a:hover{
+	text-decoration: none;
+}
+#myfooter ul p a:link{
+	text-decoration: none;
+}
+
+#myfooter ul p a:visited{
+	text-decoration: none;
+}
+
+#myfooter ul p a:active{
+	text-decoration: none;
+}
+
+#mycenter_admin{
+	border-top: 5px solid Honeydew;
+	border-left: 2px solid green;
+	border-right: 5px solid Honeydew;
+	border-bottom: 2px solid green;
+	position: relative;
+	float:left;
+	background-color: white;
+	box-shadow: 0 1px 3px 0 #b5b5b5;
+	box-shadow: 0 6px 20px #AAAAAA;
+	margin: 0 15px 15px 0;
+}
+#mycenter_admin h2{
+	color: red;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 10px solid green;
+}
+#mypost_info_admin{
+	margin: 40px 20px 20px 20px;
+}
+#mypost_info_admin form{
+	margin-bottom:40px;
+}
+#mypost_info_addarticle{
+	margin: 40px 20px 20px 20px;
+}
+#mypost_info_addarticle form{
+	margin-bottom:40px;
+}
+.carousel-inner .item  img{
+	margin:auto auto;
+}
+#Consultant{
+	font-size: 16px;
+	color: red;
+}
+#phone{
+	font-size: 22px;
+	color: #FFEB3B;
+}

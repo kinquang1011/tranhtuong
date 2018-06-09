@@ -76,11 +76,11 @@ b, strong {
     font-weight: bolder;
 }
 
-.xxx {
+/*.xxx {
 	 max-height: 400px;
 	
 	}
-
+*/
 
 .section-title {
     position: relative;
@@ -96,3 +96,6 @@ b, strong {
     width: 100%;
 }
 /* Test*/
+#title_222 {
+	color: #fff; 
+}
