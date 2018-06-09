@@ -9,7 +9,7 @@
     <script src="<?php echo base_url()?>/js/admin/editor.js"></script>
     
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -28,81 +28,32 @@
 </head>
 <body>
 <div id="mybody">
-    <!-- Ajax to load SubCatalogy for insert data to db -->
-    <script language="javascript">
-            function createObject() {
-                var request_type;
-                var browser = navigator.appName;
-                if(browser == "Microsoft Internet Explorer"){
-                    request_type = new ActiveXObject("Microsoft.XMLHTTP");
-                }else{
-                    request_type = new XMLHttpRequest();
-                }
-                return request_type;
-            }
-        var http = createObject();
-        function level2(id)
-        {
-            http.open('get',"http://giayphepthucpham.vn/index.php/admin/thu-muc-con/"+id);
-            http.onreadystatechange= process;
-            http.send(null);
-        }
-
-        function process()
-        {
-            if(http.readyState == 4 && http.status == 200)
-            {
-                result= http.responseText;
-                document.getElementById('level2').innerHTML= result;
-            }
-        }
-    </script>
+    <!-- Ajax to load SubCatalogy  -->
 <script>
-$(document).ready(function() {
-    $('#optCatalogy').on('change', function() {
+$(document).ready(
+		function() {
+    $('#optCatalogy').change(function(){
         var menu_id = $(this).val();
-        if(menu_id) {
             $.ajax({
-                url: '<?php base_url();?>/index.php/admin/getDataDropdown2/'+menu_id,
-                type: "GET",
+                url: '<?php echo base_url()?>/index.php/admin/getDataDropdown2/'+menu_id,
+                type: "POST",
                 dataType: "json",
                 success:function(data) {
-                    $('select[name="city"]').empty();
-                    $.each(data, function(key, value) {
-                        $('select[name="city"]').append('<option value="'+ value.id +'">'+ value.name +'</option>');
+                    $('select#optCodeSubCatalogy').empty();
+                    $.each(data, function(arr) {
+                        $('select#optCodeSubCatalogy').append('<option value="'+ data[arr]['sub_id'] +'">'+ data[arr]['sub_name'] +'</option>');
                     });
                 }
             });
-        }else{
-            $('select[name="city"]').empty();
-        }
     });
+})
+;
+
+</script>
+<script>
+$(window).load(function() {
+    
 });
-    $(function(){
-        $( "#optCatalogy" ).change(function(event)
-        {
-            var menu_id= $(this).val();
-            if(menu_id) {
-            $.ajax(
-                {
-                    url: '<?php echo base_url(); ?>index.php/admin/getDataDropdown2/'+$menu_id,
-                	type: "GET",
-                	dataType: "json",
-                    data:{ email:email},
-                    success:function(data) {
-                        $('#optCodeSubCatalogy').empty();
-                        $.each(data, function(key, value) {
-                            $('#optCodeSubCatalogy').append('<option value="'+ value.id +'">'+ value.name +'</option>');
-                        });
-                    }});
-            }else{
-                $('#optCodeSubCatalogy').empty();
-            }
-                }
-            }
-            );
-        });
-    });
 </script>
     <script language="javascript">
     
@@ -182,7 +133,7 @@ $(document).ready(function() {
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="usr">Sản Phẩm Chính: </label>
-                                                <select id="optCatalogy" name="fieldName" class="optional overall classes" onchange="">
+                                                <select id="optCatalogy" name="fieldName" class="optional overall classes" >
 													<?php for ($i = 0; $i < count($mainItem); $i++) { ?>
 														<option value="<?php echo $mainItem[$i]['link'];?>"><?php echo $mainItem[$i]['name'];?></option>
 													<?php }?>
