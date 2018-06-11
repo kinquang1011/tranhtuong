@@ -18,11 +18,6 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <script src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.min.js"></script>
     <script src="//cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#example').dataTable();
-        });
-    </script>
     <link href="http://giayphepthucpham.vn/public/css/bootstrap-dialog.css" rel="stylesheet" type="text/css" />
     <script src="http://giayphepthucpham.vn/public/js/bootstrap-dialog.js"></script>
 </head>
@@ -51,68 +46,57 @@ $(document).ready(
 
 </script>
 <script>
-$(window).load(function() {
-    
+$(window).on('load', function() {
+	
+        var menu_id = 'vetranhtuong';
+            $.ajax({
+                url: '<?php echo base_url()?>/index.php/admin/getDataDropdown2/'+menu_id,
+                type: "POST",
+                dataType: "json",
+                success:function(data) {
+                    $('select#optCodeSubCatalogy').empty();
+                    $.each(data, function(arr) {
+                        $('select#optCodeSubCatalogy').append('<option value="'+ data[arr]['sub_id'] +'">'+ data[arr]['sub_name'] +'</option>');
+                    });
+                }
+            });
+            $.ajax({
+                url: '<?php echo base_url()?>/index.php/admin/getDataTable/phongcanh',
+                type: "POST",
+                dataType: "json",
+                success:function(data) {
+                	drawDatatable(data);
+                }
+            });
 });
 </script>
-    <script language="javascript">
+<script type="text/javascript">
+	function drawDatatable(data){
+    var table = $('#example').DataTable();
+	table.clear();
+		var i=1;
+	$.each(data, function(arr) {
+		
+		var fullPathImg= '<?php echo base_url()?>data/'+data[arr]['url_img'];
+		var img = "<img class=\"img-rounded\" width=\"320\" height=\"160\"  src="+fullPathImg+">";
+		var imgId = data[arr]['catalogy_id'];
+		var deleteIcon = '<a onclick=\'callDialogDelete('+imgId+')\'><img src=\'http://giayphepthucpham.vn/public/images/green-cross-icon.png\' alt=\'image\'/></a>';
+		var place = data[arr]['place'];
+		var trDOM = table.row.add( [
+	                                    i,
+	                                    img,
+	                                    place,
+	                                    deleteIcon
+	                                ] ).draw().node();
+		i++;
+        
+	});
     
-        function createObject() {
-            var request_type;
-            var browser = navigator.appName;
-            if(browser == "Microsoft Internet Explorer"){
-                request_type = new ActiveXObject("Microsoft.XMLHTTP");
-            }else{
-                request_type = new XMLHttpRequest();
-            }
-            return request_type;
-        }
-        var http = createObject();
-        function loadDatatable(id)
-        {
-            http.open('get',"http://giayphepthucpham.vn/index.php/admin/loadDataTableBaiViet/"+id);
-            http.onreadystatechange= process2;
-            http.send(null);
-        }
 
-        function process2()
-        {
-            if(http.readyState == 4 && http.status == 200)
-            {
-                result= http.responseText;
-                document.getElementById('loadBaiViet').innerHTML= result;
-            }
-        }
-    </script>
-    <!-- Script Delete -->
-    <script language="javascript">
-            function createObject() {
-                var request_type;
-                var browser = navigator.appName;
-                if(browser == "Microsoft Internet Explorer"){
-                    request_type = new ActiveXObject("Microsoft.XMLHTTP");
-                }else{
-                    request_type = new XMLHttpRequest();
-                }
-                return request_type;
-            }
-        var http = createObject();
-        function deleteBaiViet(id,codeSubCatalogy)
-        {
-            http.open('get',"http://giayphepthucpham.vn/index.php/admin/deleteBaiViet/"+id+"/"+codeSubCatalogy);
-            http.onreadystatechange= process3;
-            http.send(null);
-        }
 
-        function process3()
-        {
-            if(http.readyState == 4 && http.status == 200)
-            {
-                result= http.responseText;
-                document.getElementById('loadBaiViet').innerHTML= result;
-            }
-        }
-    </script>
+	}
+</script>
+   
 
 
     <!-- 3@ Start of MYCONTAINER-->
@@ -124,8 +108,8 @@ $(window).load(function() {
                     <h2>Admin Page</h2>
                     <div class="bs-example">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="http://giayphepthucpham.vn/index.php/admin">Admin</a></li>
-                            <li><a href="http://giayphepthucpham.vn/index.php/admin/AddArticle">Add new Article</a></li>
+                            <li class="active"><a href="<?php base_url()?>/index.php/admin">Admin</a></li>
+                            <li><a href="<?php echo base_url()?>index.php/admin/AddImage">Add Image</a></li>
                         </ul>
                         <div id="mypost_info_admin">
                             <div class="row">
@@ -153,56 +137,28 @@ $(window).load(function() {
                                     </div>
                                 </form>
                             </div>
-                            <table id="example" class="table table-bordered table-condensed table-hover">
-                                <thead>
-                                <tr class="success" >
+                            <table id="example" class="table table-bordered table-condensed table-hover" cellspacing="0" width="100%">
+							    <thead>
+							        <tr class="success"  >
                                     <th width="60px">ID</th>
-                                    <th width="153px">Date Time</th>
-                                    <th width="390">Title</th>
-                                    <th width="390px">Content</th>
-                                    <th width="65px">Priority</th>
-                                    <th width="115px">Feature</th>
+                                    <th width="353px">Image</th>
+                                    <th width="390">Place</th>
+                                    <th width="390px">Delete</th>
+                                    
                                 </tr>
-                                </thead>
-
-                                <tfoot>
-                                <tr class="success" >
+							    </thead>
+							    <tfoot>
+							        <tr class="success" >
                                     <th width="60px">ID</th>
-                                    <th width="153px">Date Time</th>
-                                    <th width="390px">Title</th>
-                                    <th width="390px">Content</th>
-                                    <th width="65px">Priority</th>
-                                    <th width="115px">Feature</th>
+                                    <th width="353px">Image</th>
+                                    <th width="390">Place</th>
+                                    <th width="390px">Delete</th>
+                                     
+                                    
                                 </tr>
-                                </tfoot>
-
-
-                                <tbody id="loadBaiViet">
-                                                                    <tr height="20px">
-                                        <td>1</td>
-                                        <td>2018-03-08 04:16:00</td>
-                                        <td>Dịch vụ xin giấy phép lao động (Work Permit)</td>
-                                        <td>Giấy phép lao động (Work Permit) cho người nước ngoài.Giấy phép lao động&nbsp;theo quy định là loại giấy tờ pháp lý căn
-cứ theo Bộ luật lao&#8230; </td>
-                                        <td>
-                                            <div class="radio">
-                                                <label><input name="radio" type='radio'></label>
-                                            </div>
-                                        </td>
-                                        <td >
-                                            <form action ="http://giayphepthucpham.vn/index.php/admin/EditArticle/245" method="post">
-                                                <input type="hidden" class="codeCatalogy" name="codeCatalogy">
-                                                <input type="hidden" class="codeSubCatalogy" name="codeSubCatalogy">
-                                                <button class="btn btn-link" type="submit" onclick="submitButton()">
-                                                    <img src='http://giayphepthucpham.vn/public/images/pencil-icon.png' alt='image'/>
-                                                </button>
-                                                <a onclick="callDialogDelete(245,'CSC18')"><img src='http://giayphepthucpham.vn/public/images/green-cross-icon.png' alt='image'/></a>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                                                    </tbody>
-
-                            </table>
+							    </tfoot>
+							
+							</table>
                         </div>
                     </div>
                 </div>
@@ -220,14 +176,23 @@ cứ theo Bộ luật lao&#8230; </td>
     function submitButton(){
 
         $('.codeCatalogy').val($( "#optCatalogy option:selected" ).val());
-        $('.codeSubCatalogy').val($( "#optCodeSubCatalogy option:selected" ).val());
+        $( "#optCodeSubCatalogy option:selected" ).val();
     }
 </script>
 <script type="text/javascript">
-    function callDialogDelete(ID,codeSubC){
+    function callDialogDelete(id){
+        var sub = $( "#optCodeSubCatalogy option:selected" ).val();
+        var url = '<?php echo base_url()?>/index.php/admin/reload/'+id+'/'+sub;
         BootstrapDialog.confirm('Are you sure delete?', function(result){
             if(result) {
-                deleteBaiViet(ID,codeSubC)
+            	$.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    success:function(data) {
+                    	drawDatatable(data);
+                    }
+                });
             }else {
 
             }

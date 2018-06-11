@@ -19,5 +19,10 @@ class Catalogy extends CI_Model {
 		$re=  $query->result_array();
 		return $re;
 	}
+	public function deleteImage($imgId){
+		$strsql = "DELETE FROM CATALOGY WHERE CATALOGY_ID ='$imgId' LIMIT 1";
+	   	$query = $this->db->query($strsql);
+        return $query;
+	}
 
 }
