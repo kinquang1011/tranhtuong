@@ -69,6 +69,16 @@ $(window).on('load', function() {
                 }
             });
 });
+function loadDatatable(subId){
+	$.ajax({
+        url: '<?php echo base_url()?>/index.php/admin/getDataTable/'+subId,
+        type: "POST",
+        dataType: "json",
+        success:function(data) {
+        	drawDatatable(data);
+        }
+    });
+}
 </script>
 <script type="text/javascript">
 	function drawDatatable(data){
@@ -77,7 +87,7 @@ $(window).on('load', function() {
 		var i=1;
 	$.each(data, function(arr) {
 		
-		var fullPathImg= '<?php echo base_url()?>data/'+data[arr]['url_img'];
+		var fullPathImg= '<?php echo base_url()?>uploads/files/'+data[arr]['url_img'];
 		var img = "<img class=\"img-rounded\" width=\"320\" height=\"160\"  src="+fullPathImg+">";
 		var imgId = data[arr]['catalogy_id'];
 		var deleteIcon = '<a onclick=\'callDialogDelete('+imgId+')\'><img src=\'http://giayphepthucpham.vn/public/images/green-cross-icon.png\' alt=\'image\'/></a>';

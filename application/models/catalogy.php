@@ -24,5 +24,9 @@ class Catalogy extends CI_Model {
 	   	$query = $this->db->query($strsql);
         return $query;
 	}
+	public function addImage($data){
+		$insert = $this->db->insert_batch('catalogy',$data);
+        return $insert?true:false;
+	}
 
 }
