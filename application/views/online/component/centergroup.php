@@ -22,7 +22,7 @@
                   <div>
                   	<?php for ($i = 0; $i < count($lstImg); $i++) {?>
                   	<div class="mbr-gallery-item mbr-gallery-item--p1" data-video-url="false" data-tags="Awesome">
-                        <div href="#lb-gallery1-7" data-slide-to="<?php echo $i;?>" data-toggle="modal"><img src="<?php echo base_url() ."/data/". $lstImg[$i]['url_img']?>" alt="" title=""><span class="icon-focus"></span><span class="mbr-gallery-title mbr-fonts-style display-7 "> Click here <span class ="mbri-cursor-click mbr-iconfont mbr-iconfont-btn"></span></span></div>
+                        <div href="#lb-gallery1-7" data-slide-to="<?php echo $i;?>" data-toggle="modal"><img src="<?php echo base_url() ."/uploads/files/". $lstImg[$i]['url_img']?>" alt="" title="" height="260px" and width="195px"><span class="icon-focus"></span><span class="mbr-gallery-title mbr-fonts-style display-7 "> Click here <span class ="mbri-cursor-click mbr-iconfont mbr-iconfont-btn"></span></span></div>
                      </div>	
                   	<?php }?>
                      <!--
@@ -59,7 +59,7 @@
                   <div class="modal-body">
                      <div class="carousel-inner">
                         <?php for ($j = 0; $j < count($lstImg); $j++) {?>
-                        <div class="carousel-item <?php if ($j==0){?> active <?php }?>"><img src="<?php echo base_url()."/data/".$lstImg[$j]['url_img']?>" alt="" title=""></div>
+                        <div class="carousel-item <?php if ($j==0){?> active <?php }?>"><img src="<?php echo base_url()."/uploads/files/".$lstImg[$j]['url_img']?>" alt="" title=""></div>
                         <?php }?>
                         <!--  
                         <div class="carousel-item"><img src="<?php echo base_url();?>/assets/images/gallery01.jpg" alt="" title=""></div>

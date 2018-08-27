@@ -28,12 +28,12 @@ $this->load->helper('url');
   <link rel="stylesheet" href="<?php echo base_url();?>assets/gallery/style.css">
   <link rel="stylesheet" href="<?php echo base_url();?>assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="<?php echo base_url();?>assets/myself/mine.css" type="text/css">
-  
+  <link rel="stylesheet" href="<?php echo base_url();?>/css/phone.css" type="text/css" media="all">
   
   
 </head>
 <body>
-
+<?php $this->load->view("online/component/phone.php"); ?>
 <!--  Menu start -->
   <?php $this->load->view('online/component/menuP.php')?>
 <!--  End menu -->

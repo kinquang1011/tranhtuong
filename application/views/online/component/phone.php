@@ -1,4 +1,4 @@
-<div class="phonering-alo-phone phonering-alo-green phonering-alo-show hidden-xs visible-sm visible-md visible-lg" id="phonering-alo-phoneIcon" style="right: -40px;
+<!--<div class="phonering-alo-phone phonering-alo-green phonering-alo-show hidden-xs visible-sm visible-md visible-lg" id="phonering-alo-phoneIcon" style="right: -40px;
     top: 70px;
     display: block;">
     <div class="phonering-alo-ph-circle"></div>
@@ -13,7 +13,7 @@
         </a>
     </div>
 </div>
-<div class="phonering-alo-phone phonering-alo-green phonering-alo-show visible-xs hidden-sm hidden-md hidden-lg" id="phonering-alo-phoneIcon" style="right: -40px;
+--><div class="phonering-alo-phone phonering-alo-green phonering-alo-show visible-xs hidden-sm hidden-md hidden-lg" id="phonering-alo-phoneIcon" style="right: -40px;
     top: 0px;
     display: block;">
     <div class="phonering-alo-ph-circle"></div>

@@ -14,7 +14,7 @@
                      data-tags="Awesome">
                      <a href="<?php echo base_url()."index.php/danhmuc/".$group['link']?>" >
 	                     <div class ="border border-white" >
-	                        <img src="<?php echo base_url()."/data/". $img['url_img'];?>" alt="" title="">
+	                        <img src="<?php echo base_url()."/uploads/files/". $img['url_img'];?>" alt="" title="" height="260px" and width="195px">
 	                          <!--  <span class="mbr-gallery-title mbr-fonts-style display-7"></span>-->
 	                     </div>
                      </a>
